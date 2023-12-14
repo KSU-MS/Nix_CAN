@@ -50,3 +50,11 @@
 
 #define MODULE_6_A 0x6A
 #define MODULE_6_B 0x6B
+
+// eveLogger CAN IDs for the Vector NAV unit
+#define NAV_TIME = 0xNT
+#define NAV_GYRO = 0xNG
+#define NAV_RATE = 0xNR
+#define NAV_PLLA = 0xNP
+#define NAV_VELO = 0xNV
+#define NAV_ACCL = 0xNA
