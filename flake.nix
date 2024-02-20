@@ -1,4 +1,3 @@
-# 🍳 cookin 👩‍🍳
 {
   description = "flake for KSU-MS_CAN dbc file for DAQ";
 
