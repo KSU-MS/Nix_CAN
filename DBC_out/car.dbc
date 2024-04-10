@@ -1,4 +1,4 @@
-VERSION "f23995f
+VERSION "2c5884f
 "
 
 
@@ -297,51 +297,76 @@ BO_ 500 evelogger_vectornav_time: 8 evelogger
  SG_ evelogger_vectornav_time : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
 BO_ 501 evelogger_vectornav_gyro: 6 evelogger
- SG_ evelogger_vectornav_pitch : 32|16@1+ (0.01,0) [0|65535] "" Vector__XXX
- SG_ evelogger_vectornav_roll : 16|16@1+ (0.01,0) [0|65535] "" Vector__XXX
- SG_ evelogger_vectornav_yaw : 0|16@1+ (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_pitch : 32|16@1- (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_roll : 16|16@1- (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_yaw : 0|16@1- (0.01,0) [0|65535] "" Vector__XXX
 
 BO_ 502 evelogger_vectornav_attitude: 6 evelogger
- SG_ evelogger_vectornav_W_z : 32|16@1+ (0.01,0) [0|65535] "" Vector__XXX
- SG_ evelogger_vectornav_W_y : 16|16@1+ (0.01,0) [0|65535] "" Vector__XXX
- SG_ evelogger_vectornav_W_x : 0|16@1+ (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_W_z : 32|16@1- (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_W_y : 16|16@1- (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_W_x : 0|16@1- (0.01,0) [0|65535] "" Vector__XXX
 
 BO_ 503 evelogger_vectornav_position: 8 evelogger
- SG_ evelogger_vectornav_longitude : 32|32@1+ (1e-07,0) [0|4294967295] "" Vector__XXX
- SG_ evelogger_vectornav_latitude : 0|32@1+ (1e-07,0) [0|4294967295] "" Vector__XXX
+ SG_ evelogger_vectornav_longitude : 32|32@1- (1e-07,0) [0|4294967295] "" Vector__XXX
+ SG_ evelogger_vectornav_latitude : 0|32@1- (1e-07,0) [0|4294967295] "" Vector__XXX
 
 BO_ 504 evelogger_vectornav_velocity: 6 evelogger
- SG_ evelogger_vectornav_v_d : 32|16@1+ (0.01,0) [0|65535] "" Vector__XXX
- SG_ evelogger_vectornav_v_e : 16|16@1+ (0.01,0) [0|65535] "" Vector__XXX
- SG_ evelogger_vectornav_v_n : 0|16@1+ (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_v_d : 32|16@1- (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_v_e : 16|16@1- (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_v_n : 0|16@1- (0.01,0) [0|65535] "" Vector__XXX
 
 BO_ 505 evelogger_vectornav_acceleration: 6 evelogger
- SG_ evelogger_vectornav_accelZ : 32|16@1+ (0.01,0) [0|65535] "" Vector__XXX
- SG_ evelogger_vectornav_accelY : 16|16@1+ (0.01,0) [0|65535] "" Vector__XXX
- SG_ evelogger_vectornav_accelX : 0|16@1+ (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_accelZ : 32|16@1- (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_accelY : 16|16@1- (0.01,0) [0|65535] "" Vector__XXX
+ SG_ evelogger_vectornav_accelX : 0|16@1- (0.01,0) [0|65535] "" Vector__XXX
 
-BO_ 1713 MSGID_0X6B1: 8 BMS
- SG_ CRC_Checksum : 63|8@0+ (1,1721) [0|0] ""  Third_Party_Device
- SG_ Average_Temperature : 55|8@0+ (1,0) [0|0] "Celsius"  Third_Party_Device
- SG_ Low_Temperature : 47|8@0+ (1,0) [0|0] "Celsius"  Third_Party_Device
- SG_ High_Temperature : 39|8@0+ (1,0) [0|0] "Celsius"  Third_Party_Device
- SG_ Pack_CCL : 16|16@1+ (1,0) [0|0] "Amps"  Third_Party_Device
- SG_ Pack_DCL : 0|16@1+ (1,0) [0|0] "Amps"  Third_Party_Device
+BO_ 900 cornernode_fl_shockpot: 2 cornernode_fl
+ SG_ cornernode_fl_shockpot : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
 
-BO_ 1714 MSGID_0X6B2: 8 BMS
- SG_ Pack_Summed_Voltage : 48|16@1+ (0.01,0) [0|0] "Volts"  Third_Party_Device
- SG_ Pack_Inst_Voltage : 32|16@1+ (0.1,0) [0|0] "Volts"  Third_Party_Device
- SG_ Pack_Open_Voltage : 16|16@1+ (0.1,0) [0|0] "Volts"  Third_Party_Device
- SG_ Pack_Current : 0|16@1- (0.1,0) [0|0] "Amps"  Third_Party_Device
+BO_ 901 cornernode_fr_shockpot: 2 cornernode_fr
+ SG_ cornernode_fr_shockpot : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
 
-BO_ 1715 MSGID_0X6B3: 8 BMS
- SG_ Blank6 : 63|8@0+ (1,0) [0|0] ""  Third_Party_Device
- SG_ Blank5 : 55|8@0+ (1,0) [0|0] ""  Third_Party_Device
- SG_ Blank4 : 47|8@0+ (1,0) [0|0] ""  Third_Party_Device
- SG_ Blank3 : 39|8@0+ (1,0) [0|0] ""  Third_Party_Device
- SG_ Blank2 : 31|8@0+ (1,0) [0|0] ""  Third_Party_Device
- SG_ Blank1 : 23|8@0+ (1,0) [0|0] ""  Third_Party_Device
- SG_ Pack_SOC : 0|16@1+ (0.5,0) [0|0] "Percent"  Third_Party_Device
+BO_ 902 cornernode_rl_shockpot: 2 cornernode_rl
+ SG_ cornernode_rl_shockpot : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 903 cornernode_rr_shockpot: 2 cornernode_rr
+ SG_ cornernode_rr_shockpot : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 904 cornernode_fl_wheelspeed: 2 cornernode_fl
+ SG_ cornernode_fl_wheelspeed : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 905 cornernode_fr_wheelspeed: 2 cornernode_fr
+ SG_ cornernode_fr_wheelspeed : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 906 cornernode_rl_wheelspeed: 2 cornernode_rl
+ SG_ cornernode_rl_wheelspeed : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 907 cornernode_rr_wheelspeed: 2 cornernode_rr
+ SG_ cornernode_rr_wheelspeed : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 908 cornernode_fl_tiretemp: 8 cornernode_fl
+ SG_ cornernode_fl_tiretemp : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
+
+BO_ 909 cornernode_fr_tiretemp: 8 cornernode_fr
+ SG_ cornernode_fr_tiretemp : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
+
+BO_ 910 cornernode_rl_tiretemp: 8 cornernode_rl
+ SG_ cornernode_rl_tiretemp : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
+
+BO_ 911 cornernode_rr_tiretemp: 8 cornernode_rr
+ SG_ cornernode_rr_tiretemp : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
+
+BO_ 912 cornernode_fl_brakepressure: 2 cornernode_fl
+ SG_ cornernode_fl_brakepressure : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 913 cornernode_fr_brakepressure: 2 cornernode_fr
+ SG_ cornernode_fr_brakepressure : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 914 cornernode_rl_brakepressure: 2 cornernode_rl
+ SG_ cornernode_rl_brakepressure : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 915 cornernode_rr_brakepressure: 2 cornernode_rr
+ SG_ cornernode_rr_brakepressure : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
 
 BO_ 173 M173_Modulation_And_Flux_Info: 8 RMS_PM_Controller
  SG_ D4_Iq_Command : 48|16@1- (0.1,0) [-3276.8|3276.7] "A" Vector__XXX
@@ -493,6 +518,29 @@ BO_ 469 M188_U2C_Message_Rxd: 8 Vector__XXX
 BO_ 514 BMS_Current_Limit: 8 Vector__XXX
  SG_ D2_Max_Charge_Current : 16|16@1+ (1,0) [0|1000] "A" Vector__XXX
  SG_ D1_Max_Discharge_Current : 0|16@1+ (1,0) [0|1000] "A" Vector__XXX
+
+BO_ 1713 MSGID_0X6B1: 8 BMS
+ SG_ CRC_Checksum : 63|8@0+ (1,1721) [0|0] ""  Third_Party_Device
+ SG_ Average_Temperature : 55|8@0+ (1,0) [0|0] "Celsius"  Third_Party_Device
+ SG_ Low_Temperature : 47|8@0+ (1,0) [0|0] "Celsius"  Third_Party_Device
+ SG_ High_Temperature : 39|8@0+ (1,0) [0|0] "Celsius"  Third_Party_Device
+ SG_ Pack_CCL : 16|16@1+ (1,0) [0|0] "Amps"  Third_Party_Device
+ SG_ Pack_DCL : 0|16@1+ (1,0) [0|0] "Amps"  Third_Party_Device
+
+BO_ 1714 MSGID_0X6B2: 8 BMS
+ SG_ Pack_Summed_Voltage : 48|16@1+ (0.01,0) [0|0] "Volts"  Third_Party_Device
+ SG_ Pack_Inst_Voltage : 32|16@1+ (0.1,0) [0|0] "Volts"  Third_Party_Device
+ SG_ Pack_Open_Voltage : 16|16@1+ (0.1,0) [0|0] "Volts"  Third_Party_Device
+ SG_ Pack_Current : 0|16@1- (0.1,0) [0|0] "Amps"  Third_Party_Device
+
+BO_ 1715 MSGID_0X6B3: 8 BMS
+ SG_ Blank6 : 63|8@0+ (1,0) [0|0] ""  Third_Party_Device
+ SG_ Blank5 : 55|8@0+ (1,0) [0|0] ""  Third_Party_Device
+ SG_ Blank4 : 47|8@0+ (1,0) [0|0] ""  Third_Party_Device
+ SG_ Blank3 : 39|8@0+ (1,0) [0|0] ""  Third_Party_Device
+ SG_ Blank2 : 31|8@0+ (1,0) [0|0] ""  Third_Party_Device
+ SG_ Blank1 : 23|8@0+ (1,0) [0|0] ""  Third_Party_Device
+ SG_ Pack_SOC : 0|16@1+ (0.5,0) [0|0] "Percent"  Third_Party_Device
 
 BO_ 1570 megasquirt_gp50: 8 Vector__XXX
  SG_ launch_retard : 55|16@0- (0.1,0) [0|0] "deg" Vector__XXX
@@ -1038,9 +1086,22 @@ CM_ BO_ 502 "vectornav gyro readings";
 CM_ BO_ 503 "vectornav position";
 CM_ BO_ 504 "vectornav velocity readings";
 CM_ BO_ 505 "vectornav accelerometer readings";
-CM_ BO_ 1713 "This ID Transmits at 104 ms.";
-CM_ BO_ 1714 "This ID Transmits at 48 ms.";
-CM_ BO_ 1715 "This ID Transmits at 1008 ms.";
+CM_ BO_ 900 "front left corner node shockpot data";
+CM_ BO_ 901 "front right corner node shockpot data";
+CM_ BO_ 902 "rear left corner node shockpot data";
+CM_ BO_ 903 "rear right corner node shockpot data";
+CM_ BO_ 904 "front left corner node wheelspeed data";
+CM_ BO_ 905 "front right corner node wheelspeed data";
+CM_ BO_ 906 "rear left corner node wheelspeed data";
+CM_ BO_ 907 "rear right corner node wheelspeed data";
+CM_ BO_ 908 "front left corner node tiretemp data";
+CM_ BO_ 909 "front right corner node tiretemp data";
+CM_ BO_ 910 "rear left corner node tiretemp data";
+CM_ BO_ 911 "rear right corner node tiretemp data";
+CM_ BO_ 912 "front left corner node brakepressure data";
+CM_ BO_ 913 "front right corner node brakepressure data";
+CM_ BO_ 914 "rear left corner node brakepressure data";
+CM_ BO_ 915 "rear right corner node brakepressure data";
 CM_ SG_ 173 D4_Iq_Command "The commanded Q-axis current";
 CM_ SG_ 173 D3_Id_Command "The commanded D-axis current";
 CM_ SG_ 173 D2_Flux_Weakening_Output "This is the current output of the flux regulator.";
@@ -1139,6 +1200,9 @@ CM_ SG_ 160 D1_Module_A "IGBT Module A Temperature";
 CM_ BO_ 514 "Sent by BMS";
 CM_ SG_ 514 D2_Max_Charge_Current "Maximum charge current from BMS";
 CM_ SG_ 514 D1_Max_Discharge_Current "Maximum discharge current from BMS";
+CM_ BO_ 1713 "This ID Transmits at 104 ms.";
+CM_ BO_ 1714 "This ID Transmits at 48 ms.";
+CM_ BO_ 1715 "This ID Transmits at 1008 ms.";
 CM_ SG_ 1570 launch_retard "Launch retard";
 CM_ SG_ 1570 launch_timer "Timer for timed-launch retard";
 CM_ SG_ 1570 total_accel "Total accel";
