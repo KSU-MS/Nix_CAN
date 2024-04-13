@@ -1,4 +1,4 @@
-VERSION "2c5884f
+VERSION "595777b
 "
 
 
@@ -54,6 +54,12 @@ BO_ 202 VCU_BOARD_READINGS_TWO: 8 vcu
  SG_ VCU_AIN9_VOLTAGE : 32|16@1+ (1,0) [0|65535] "bits" Vector__XXX
  SG_ VCU_SDC_CURRENT : 16|16@1+ (1,0) [0|65535] "bits" Vector__XXX
  SG_ VCU_SDC_VOLTAGE : 0|16@1+ (1,0) [0|65535] "bits" Vector__XXX
+
+BO_ 203 vcu_launchcontrol_diagdata: 8 vcu
+ SG_ vcu_launchcontrol_type : 56|8@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ vcu_launchcontrol_state : 48|8@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ vcu_launchcontrol_outputtorqueco : 32|16@1- (1,0) [0|65535] "" Vector__XXX
+ SG_ vcu_launchcontrol_elapsed_time : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
 BO_ 198 VCU_WHEELSPEED_READINGS: 8 vcu
  SG_ vcu_rpm_front_right : 16|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
@@ -292,6 +298,10 @@ BO_ 1104 omni_shockpot_data: 8 omni
 
 BO_ 1105 omni_steering_data: 2 omni
  SG_ omni_steering : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 1106 omni_gps_position: 8 omni
+ SG_ omni_gps_longitude : 32|32@1- (1e-07,0) [0|4294967295] "" Vector__XXX
+ SG_ omni_gps_latitude : 0|32@1- (1e-07,0) [0|4294967295] "" Vector__XXX
 
 BO_ 500 evelogger_vectornav_time: 8 evelogger
  SG_ evelogger_vectornav_time : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
@@ -991,6 +1001,9 @@ CM_ SG_ 202 VCU_AIN10_VOLTAGE "VCU pcb non specific analog channel";
 CM_ SG_ 202 VCU_AIN9_VOLTAGE "VCU pcb non specific analog channel";
 CM_ SG_ 202 VCU_SDC_CURRENT "VCU PCB current sense of shutdown circuit";
 CM_ SG_ 202 VCU_SDC_VOLTAGE "VCU pcb voltage sense of the shutdown circuit input";
+CM_ BO_ 203 "vcu launchController system status";
+CM_ SG_ 203 vcu_launchcontrol_outputtorqueco "launch controller torque output";
+CM_ SG_ 203 vcu_launchcontrol_elapsed_time "time that the launch controller has been executing, in miliiseconds";
 CM_ BO_ 198 "VCU wheel speed sensor readings";
 CM_ SG_ 198 vcu_rpm_front_right "front right wheel speed sensor";
 CM_ SG_ 198 vcu_rpm_front_left "front left wheel speed sensor";
@@ -1080,6 +1093,7 @@ CM_ SG_ 1104 omni_shockpot_fr "omni fr shockpot reading, adc bits";
 CM_ SG_ 1104 omni_shockpot_fl "omni fl shockpot reading, adc bits";
 CM_ BO_ 1105 "raw steering angle sensor reading with teensy 12bit adc, assume 3v3 ref";
 CM_ SG_ 1105 omni_steering "omni steering angle sensor reading, adc bits";
+CM_ BO_ 1106 "adafruit gps coordinates";
 CM_ BO_ 500 "vectornav breakout realtime";
 CM_ BO_ 501 "vectornav attitude readings";
 CM_ BO_ 502 "vectornav gyro readings";
@@ -1497,6 +1511,7 @@ BA_DEF_ SG_  "SystemSignalLongSymbol" STRING ;
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "SystemSignalLongSymbol" "";
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "SystemSignalLongSymbol" SG_ 203 vcu_launchcontrol_outputtorqueco "vcu_launchcontrol_outputtorquecommand";
 BA_ "GenMsgCycleTime" BO_ 172 10;
 BA_ "GenMsgCycleTime" BO_ 194 10;
 BA_ "GenMsgCycleTime" BO_ 193 10;
@@ -1514,6 +1529,8 @@ BA_ "GenMsgCycleTime" BO_ 162 100;
 BA_ "GenMsgCycleTime" BO_ 161 100;
 BA_ "GenMsgCycleTime" BO_ 160 100;
 BA_ "SystemSignalLongSymbol" SG_ 469 D1_HV_Input_Current_Sensor_Valid "D1_HV_Input_Current_Sensor_Validity";
+VAL_ 203 vcu_launchcontrol_type 0 "LC_DRIVERCONTROL" 1 "LC_LOOKUP" 2 "LC_LINEAR" 3 "LC_NUM_CONTROLLERS" ;
+VAL_ 203 vcu_launchcontrol_state 0 "IDLE" 1 "WAITING_TO_LAUNCH" 2 "LAUNCHING" 3 "FINISHED" ;
 VAL_ 192 Inverter_Discharge 0 "Discharge Disable" 1 "Discharge Enable (if EEPROM parameter is set)" ;
 VAL_ 192 Inverter_Enable 0 "Turn the inverter OFF" 1 "Turn the Inverter ON" ;
 VAL_ 192 Direction_Command 0 "CW" 1 "CCW" ;
